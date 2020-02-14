@@ -13,6 +13,21 @@ body {
   background-color: #e57373;
 }
 
+.button {
+  padding: 15px 25px;
+  outline: none;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 0;
+  color: #e9e9f7;
+  margin-top: 5px;
+}
+
+.button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 .calculate {
   color: #050711;
   padding: 15px 25px;
@@ -20,7 +35,10 @@ body {
   border-radius: 3px;
   font-weight: bold;
   border: 0;
-  margin: 35px 35px 0px 35px;
+  margin: 15px 35px 0px 35px;
+  font-size: 15px;
+  background-color: #c3c4c7;
+  cursor: pointer;
 }
 
 .calculate:hover {

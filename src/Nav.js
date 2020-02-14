@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Nav = () => {
-  return <div style={styles}>Want to find out much you have to save to reach your financial goal?</div>;
+  return <div style={styles}>Want to find out how much you have to spend to reach your financial goal?</div>;
 };
 
 const styles = {
@@ -9,7 +9,7 @@ const styles = {
   height: '20%',
   padding: '20px',
   textAlign: 'left',
-  color: '#ffbf61',
+  color: '#ED9568',
   fontWeight: 'bold',
   fontSize: '20px'
   //   color: '#fff'

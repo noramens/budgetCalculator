@@ -1,4 +1,5 @@
 import React from 'react';
+// import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Footer = () => {
   return <div style={styles}>this should be a nice Footer</div>;
@@ -9,7 +10,7 @@ const styles = {
   height: '20%',
   padding: '20px',
   textAlign: 'right',
-  color: '#ffbf61',
+  color: '#ED9568',
   fontWeight: 'bold'
 };
 

@@ -1,30 +1,66 @@
 import React from 'react';
 import './App.css';
 
-const CalArea = props => {
+const CalArea = ({
+  setGoal,
+  setIncome,
+  setSave,
+  calculate,
+  monthResult,
+  recalculate,
+  income,
+  saveResult,
+  disable,
+  setDisable
+}) => {
   return (
     <div style={styles}>
-      <div style={firstDiv}>jhkjak</div>
+      <div style={firstDiv}>
+        <p style={{ fontWeight: 'bold' }}> You should spend this monthly</p>
+        <div style={amount}>{monthResult}</div>
+        <p style={{ fontWeight: 'bold', marginTop: '30px' }}> Which means saving this every month </p>
+        <div style={amount}>{saveResult}</div>
+        <button className="calculate" style={{ width: '60%' }} disabled>
+          Recalculate
+        </button>
+      </div>
+
       <div style={secondDiv}>
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
-          <input type="number" style={inputComponent} placeholder="how much do you wish to save" />
-          <button style={button} className="green">
-            Save
+          <input
+            type="number"
+            onChange={event => setIncome(Number(event.target.value))}
+            onFocus={disable ? console.log('disabl') : null}
+            style={inputComponent}
+            placeholder="what is your monthly income?"
+          />
+          <button onClick={setDisable(true)} className="button green">
+            Change Income
           </button>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
-          <input type="number" style={inputComponent} placeholder="enter monthly income" />
-          <button style={button} className="purple">
-            Save
-          </button>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
-          <input type="number" style={inputComponent} placeholder="how long do you want to save" />
-          <button style={button} className="light">
-            Save
-          </button>
 
-          <button className="calculate">Calculate</button>
+        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
+          <input
+            type="number"
+            onChange={event => setGoal(Number(event.target.value))}
+            style={inputComponent}
+            placeholder="what is your financial goal?"
+          />
+          <button className=" button purple">Save Financial Goal</button>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
+          <input
+            type="number"
+            onChange={event => setSave(Number(event.target.value))}
+            style={inputComponent}
+            placeholder="how many months do you want to save"
+          />
+          <button className=" button light">Save Saving Duration </button>
+
+          <button onClick={calculate} className="calculate">
+            Calculate
+          </button>
         </div>
       </div>
     </div>
@@ -48,7 +84,22 @@ const styles = {
 
 const firstDiv = {
   width: '50%',
-  borderRight: '1px solid rgba(255, 255, 255, 0.05)'
+  borderRight: '1px solid rgba(255, 255, 255, 0.05)',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column'
+};
+
+const amount = {
+  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+  borderRadius: '30%',
+  width: '60%',
+  height: '20%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '40px'
 };
 
 const secondDiv = {
@@ -71,17 +122,4 @@ const inputComponent = {
   outline: 'none'
 };
 
-const button = {
-  padding: '15px 25px',
-  outline: 'none',
-  borderRadius: '3px',
-  fontWeight: 'bold',
-  border: '0',
-  color: '#E9E9F7',
-  marginTop: '5px',
-
-  '&:hover': {
-    opacity: '0.8'
-  }
-};
 export default CalArea;
