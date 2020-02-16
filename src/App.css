@@ -2,32 +2,6 @@ body {
   background-color: #050711;
 }
 
-.green {
-  background-color: #14c488;
-}
-.purple {
-  background-color: #6666bd;
-}
-
-.light {
-  background-color: #e57373;
-}
-
-.button {
-  padding: 15px 25px;
-  outline: none;
-  border-radius: 3px;
-  font-weight: bold;
-  border: 0;
-  color: #e9e9f7;
-  margin-top: 5px;
-}
-
-.button:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
 .calculate {
   color: #050711;
   padding: 15px 25px;
@@ -37,10 +11,35 @@ body {
   border: 0;
   margin: 15px 35px 0px 35px;
   font-size: 15px;
-  background-color: #c3c4c7;
   cursor: pointer;
+  background-color: #14c488;
 }
 
-.calculate:hover {
-  opacity: 0.9;
+.recalculate {
+  color: #050711;
+  padding: 15px 25px;
+  outline: none;
+  border-radius: 3px;
+  font-weight: bold;
+  border: 0;
+  margin: 15px 35px 0px 35px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #e57373;
+}
+
+.inputComponent {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 300px;
+  height: 5vh;
+  padding: 1px 1px 1px 10px;
+  color: #e9e9f7;
+  font-size: 16px;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }

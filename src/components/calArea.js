@@ -1,64 +1,73 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 const CalArea = ({
+  income,
+  save,
+  goal,
   setGoal,
   setIncome,
   setSave,
   calculate,
   monthResult,
-  recalculate,
-  income,
   saveResult,
-  disable,
-  setDisable
+  recalculate,
+  buttonClicked
 }) => {
   return (
     <div style={styles}>
       <div style={firstDiv}>
-        <p style={{ fontWeight: 'bold' }}> You should spend this monthly</p>
-        <div style={amount}>{monthResult}</div>
-        <p style={{ fontWeight: 'bold', marginTop: '30px' }}> Which means saving this every month </p>
-        <div style={amount}>{saveResult}</div>
-        <button className="calculate" style={{ width: '60%' }} disabled>
-          Recalculate
-        </button>
+        {buttonClicked ? (
+          <React.Fragment>
+            <p style={{ fontWeight: 'bold' }}> You should spend this monthly</p>
+            <div style={amount}>{monthResult}</div>
+            <p style={{ fontWeight: 'bold', marginTop: '30px' }}> Which means saving this every month </p>
+            <div style={amount}>{saveResult}</div>
+            <button onClick={recalculate} className="recalculate" style={{ width: '60%' }}>
+              Recalculate
+            </button>
+          </React.Fragment>
+        ) : (
+          <div style={{ color: 'rgba(255, 255, 255, 0.2)' }}>fill out this simple form</div>
+        )}
       </div>
 
       <div style={secondDiv}>
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
           <input
             type="number"
+            value={income}
             onChange={event => setIncome(Number(event.target.value))}
-            onFocus={disable ? console.log('disabl') : null}
-            style={inputComponent}
+            className="inputComponent"
             placeholder="what is your monthly income?"
           />
-          <button onClick={setDisable(true)} className="button green">
-            Change Income
-          </button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
           <input
             type="number"
+            value={goal}
             onChange={event => setGoal(Number(event.target.value))}
-            style={inputComponent}
+            className="inputComponent"
             placeholder="what is your financial goal?"
           />
-          <button className=" button purple">Save Financial Goal</button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
           <input
             type="number"
+            value={save}
             onChange={event => setSave(Number(event.target.value))}
-            style={inputComponent}
+            className="inputComponent"
             placeholder="how many months do you want to save"
           />
-          <button className=" button light">Save Saving Duration </button>
 
-          <button onClick={calculate} className="calculate">
+          <button
+            onClick={calculate}
+            className="calculate"
+            style={!income || !goal || !save ? disabledButton : calculateButton}
+            disabled={!income || !goal || !save}
+          >
             Calculate
           </button>
         </div>
@@ -110,16 +119,21 @@ const secondDiv = {
   flexDirection: 'column'
 };
 
-const inputComponent = {
+const calculateButton = {
+  color: '#050711',
+  padding: '15px 25px',
+  outline: 'none',
+  borderRadius: '3px',
+  fontWeight: 'bold',
   border: '0',
-  borderRadius: '5px',
-  backgroundColor: 'rgba(255, 255, 255, 0.05)',
-  width: '280px',
-  height: '5vh',
-  padding: '1px 1px 1px 5px',
-  color: '#E9E9F7',
-  fontSize: '14px',
-  outline: 'none'
+  margin: '15px 35px 0px 35px',
+  fontSize: '15px',
+  cursor: 'pointer',
+  backgroundColor: '#14c488'
+};
+
+const disabledButton = {
+  backgroundColor: 'rgba(20, 196, 136, 0.3)'
 };
 
 export default CalArea;

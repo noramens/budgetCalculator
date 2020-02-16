@@ -1,41 +1,46 @@
 import React, { useState } from 'react';
-import Nav from './Nav';
-import CalArea from './calArea';
-import Footer from './footer';
+import Nav from './components/Nav';
+import CalArea from './components/calArea';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
-  const [disable, setDisable] = useState(false);
-  const [goal, setGoal] = useState();
-  const [income, setIncome] = useState();
-  const [save, setSave] = useState();
-  const [monthResult, setMonthResult] = useState('$400,000');
-  const [saveResult, setSaveResult] = useState('$200');
+  const [goal, setGoal] = useState('');
+  const [income, setIncome] = useState('');
+  const [save, setSave] = useState('');
+  const [monthResult, setMonthResult] = useState('');
+  const [saveResult, setSaveResult] = useState('');
+  const [buttonClicked, setButtonClicked] = useState(false);
 
-  const Recalculate = () => {
-    setMonthResult();
-    setIncome();
-    setSave();
-    setGoal();
-  };
+  function recalculate() {
+    setMonthResult('');
+    setSaveResult('');
+    setIncome('');
+    setSave('');
+    setGoal('');
+  }
 
-  const Calculate = () => {
+  function calculate() {
     setMonthResult(Math.floor((income * save - goal) / save).toFixed(2));
-    setSaveResult(console.log(monthResult));
-  };
+    setSaveResult(Math.floor(income - (income * save - goal) / save).toFixed(2));
+    setButtonClicked(true);
+  }
+
   return (
     <div className="App">
       <Nav />
       <CalArea
+        goal={goal}
+        income={income}
+        save={save}
         setGoal={setGoal}
         setIncome={setIncome}
         setSave={setSave}
-        calculate={Calculate}
+        calculate={calculate}
         monthResult={monthResult}
-        recalculate={Recalculate}
+        recalculate={recalculate}
         saveResult={saveResult}
-        disable={disable}
-        setDisable={setDisable}
+        buttonClicked={buttonClicked}
       />
       <Footer />
     </div>

@@ -1,15 +1,19 @@
 import React from 'react';
-// import GitHubIcon from '@material-ui/icons/GitHub';
+import { ReactComponent as GitHubIcon } from '../images/github.svg';
 
 const Footer = () => {
-  return <div style={styles}>this should be a nice Footer</div>;
+  return (
+    <div style={styles}>
+      <GitHubIcon />
+    </div>
+  );
 };
 
 const styles = {
   backgroundColor: 'rgba(255, 255, 255, 0.05)',
   height: '20%',
-  padding: '20px',
-  textAlign: 'right',
+  padding: '10px',
+  textAlign: 'center',
   color: '#ED9568',
   fontWeight: 'bold'
 };
