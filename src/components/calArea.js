@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import '../App.css';
 
 const CalArea = ({
@@ -18,7 +18,7 @@ const CalArea = ({
     <div style={styles}>
       <div style={firstDiv}>
         {buttonClicked ? (
-          <React.Fragment>
+          <Fragment>
             <p style={{ fontWeight: 'bold' }}> You should spend this monthly</p>
             <div style={amount}>{monthResult}</div>
             <p style={{ fontWeight: 'bold', marginTop: '30px' }}> Which means saving this every month </p>
@@ -26,14 +26,14 @@ const CalArea = ({
             <button onClick={recalculate} className="recalculate" style={{ width: '60%' }}>
               Recalculate
             </button>
-          </React.Fragment>
+          </Fragment>
         ) : (
           <div style={{ color: 'rgba(255, 255, 255, 0.2)' }}>fill out this simple form</div>
         )}
       </div>
 
       <div style={secondDiv}>
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
+        <div className="inputContainer">
           <input
             type="number"
             value={income}
@@ -43,7 +43,7 @@ const CalArea = ({
           />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
+        <div className="inputContainer">
           <input
             type="number"
             value={goal}
@@ -53,7 +53,7 @@ const CalArea = ({
           />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '25px' }}>
+        <div className="inputContainer">
           <input
             type="number"
             value={save}
