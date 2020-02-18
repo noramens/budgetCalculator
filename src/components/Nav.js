@@ -1,9 +1,10 @@
 import React from 'react';
+import Logo from '../images/kudiforpocket.png';
 
 const Nav = () => {
   return (
     <div style={styles}>
-      <div>logo</div>
+      <img src={Logo} width="180px" height="25px" alt="logo" />
       <div>Want to find out how much you have to spend to reach your financial goal?</div>
     </div>
   );

@@ -81,11 +81,8 @@ const styles = {
   alignSelf: 'center',
   justifySelf: 'center',
   justifyContent: 'center',
-  flexDirection: 'row',
-  margin: '3em auto',
-  textAlign: 'center',
   width: '80vw',
-  height: '70vh',
+  minHeight: '70vh',
   backgroundColor: '#1e253d',
   borderRadius: '5px',
   color: '#E9E9F7'

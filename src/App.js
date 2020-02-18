@@ -29,19 +29,30 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <CalArea
-        goal={goal}
-        income={income}
-        save={save}
-        setGoal={setGoal}
-        setIncome={setIncome}
-        setSave={setSave}
-        calculate={calculate}
-        monthResult={monthResult}
-        recalculate={recalculate}
-        saveResult={saveResult}
-        buttonClicked={buttonClicked}
-      />
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100vw',
+          height: '85vh'
+        }}
+      >
+        <CalArea
+          goal={goal}
+          income={income}
+          save={save}
+          setGoal={setGoal}
+          setIncome={setIncome}
+          setSave={setSave}
+          calculate={calculate}
+          monthResult={monthResult}
+          recalculate={recalculate}
+          saveResult={saveResult}
+          buttonClicked={buttonClicked}
+        />
+      </div>
+
       <Footer />
     </div>
   );
