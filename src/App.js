@@ -3,7 +3,6 @@ import Nav from './components/Nav';
 import CalArea from './components/calArea';
 import Footer from './components/footer';
 import './App.css';
-import styled from 'styled-components';
 
 function App() {
   const [goal, setGoal] = useState('');
@@ -30,7 +29,15 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <CalcAreaContainer>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100vw',
+          height: '85vh'
+        }}
+      >
         <CalArea
           goal={goal}
           income={income}
@@ -44,17 +51,11 @@ function App() {
           saveResult={saveResult}
           buttonClicked={buttonClicked}
         />
-      </CalcAreaContainer>
+      </div>
+
       <Footer />
     </div>
   );
 }
 
-const CalcAreaContainer = styled.div`
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '100vw',
-  height: '85vh'
-`;
 export default App;
