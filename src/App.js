@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import CalArea from './components/calArea';
-import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -21,8 +20,11 @@ function App() {
   }
 
   function calculate() {
-    setMonthResult(Math.floor((income * save - goal) / save).toFixed(2));
-    setSaveResult(Math.floor(income - (income * save - goal) / save).toFixed(2));
+    let result = Math.floor((income * save - goal) / save).toFixed(2);
+    result < 1 ? setMonthResult('😂you are entering into the negatives🤣') : setMonthResult(result);
+    result < 1
+      ? setSaveResult('enter corresponding figures')
+      : setSaveResult(Math.floor(income - (income * save - goal) / save).toFixed(2));
     setButtonClicked(true);
   }
 
@@ -52,8 +54,6 @@ function App() {
           buttonClicked={buttonClicked}
         />
       </div>
-
-      <Footer />
     </div>
   );
 }
