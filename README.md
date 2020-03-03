@@ -20,7 +20,10 @@ A step by step that will tell you how to get a development environment running
 
 ## How it works
 
-{still under construction. fingers crossed}
+This application is for those that are looking for a way to find out how much they should spend and save, given their monthly income, financial goal and the duration they would want to save. As simple as that.
+
+Provide the necessary data in the inputs available, Click on the ```Calculate``` button and vioala.... you'd have your results immediately. You can also click on the ```Recalculate``` button to reset your preset data to ```0```, then you can start all over again.
+
 
 ## Built With
 
