@@ -1,4 +1,5 @@
 # budgetCalculator
+![kudiImage](https://boring-feynman-cce6c4.netlify.com/)
 
 Want to find out how far you are from your financial goal? Try this!
 
