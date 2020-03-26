@@ -21,9 +21,9 @@ function App() {
 
   function calculate() {
     let result = Math.floor((income * save - goal) / save).toFixed(2);
-    result < 1 ? setMonthResult('😂you are entering into the negatives🤣') : setMonthResult(result);
+    result < 1 ? setMonthResult('😭😭😭') : setMonthResult(result);
     result < 1
-      ? setSaveResult('enter corresponding figures')
+      ? setSaveResult('you cant save more than you earn!')
       : setSaveResult(Math.floor(income - (income * save - goal) / save).toFixed(2));
     setButtonClicked(true);
   }

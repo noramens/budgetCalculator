@@ -49,7 +49,7 @@ const CalArea = ({
             value={income}
             onChange={event => setIncome(Number(event.target.value).toString())}
             className="inputComponent"
-            placeholder="enter number here"
+            placeholder="eg: 788"
           />
         </InputContainer>
 
@@ -60,7 +60,7 @@ const CalArea = ({
             value={goal}
             onChange={event => setGoal(Number(event.target.value).toString())}
             className="inputComponent"
-            placeholder="enter number here"
+            placeholder="eg: 1500"
           />
         </InputContainer>
 
@@ -71,7 +71,7 @@ const CalArea = ({
             value={save}
             onChange={event => setSave(Number(event.target.value).toString())}
             className="inputComponent"
-            placeholder="enter number here"
+            placeholder="eg: 12"
           />
 
           <CalculatorButton

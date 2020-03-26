@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const CalcAreaContainer = styled.div`
   display: flex;
@@ -56,27 +56,27 @@ const CalculatorButton = styled.button`
   margin: 15px 35px 0px 35px;
   font-size: 15px;
   cursor: pointer;
-  background-color: ${props => (props.primary ? '#e57373' : '#14c488')};
+  background-color: ${props => (props.primary ? "#e57373" : "#14c488")};
 `;
 
 const Description = styled.p`
   color: rgba(255, 255, 255, 0.9);
   font-size: 12px;
-  margin: ${props => (props.primary ? ' 0px 0px 5px -140px' : ' 0px 0px 5px 0px')};
+  font-weight: bold;
+  margin: ${props => (props.primary ? " 0px 0px 5px -140px" : " 0px 0px 5px 0px")};
 `;
 
 const NavContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 20%;
   padding: 10px;
   text-align: left;
   color: #eee;
   font-weight: bold;
   font-size: 20px;
-  display: flex;
-  justify-content: space-between;
 `;
 
 const GithubLogo = styled.div`
